@@ -3,6 +3,7 @@ package service;
 import dao.EmployeeDao;
 import model.Employee;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -44,6 +45,11 @@ public class EmployeeService {
         System.out.println("Printing employee names having even employee id.");
         employees.stream().filter(emp -> emp.getEmployeeId()%2== 0)
                 .forEach(emp-> System.out.println(emp.getEmployeeName()));
+
+        List<Employee> employeeEmptyList= new ArrayList<>();
+        //Supplier functional interface demo
+        System.out.println(employeeEmptyList.stream().findAny().orElseGet(()-> new Employee(0, "default",
+                "default", "default", null )));
 
     }
 }
