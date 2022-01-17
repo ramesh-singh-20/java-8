@@ -40,5 +40,10 @@ public class EmployeeService {
         System.out.println("**********Employee Names***************");
         employees.stream().forEach(emp-> System.out.println(emp.getEmployeeName()));
 
+        //Printing employees name with even employee id
+        System.out.println("Printing employee names having even employee id.");
+        employees.stream().filter(emp -> emp.getEmployeeId()%2== 0)
+                .forEach(emp-> System.out.println(emp.getEmployeeName()));
+
     }
 }
