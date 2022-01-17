@@ -4,21 +4,21 @@ import java.util.List;
 import java.util.Objects;
 
 public class Employee {
-    private long employeeId;
+    private Integer employeeId;
     private String employeeName;
     private String department;
-    private String emails;
+    private String email;
     private List<Long> telephoneNumbers;
 
-    public Employee(long employeeId, String employeeName, String department, String emails, List<Long> telephoneNumbers) {
+    public Employee(Integer employeeId, String employeeName, String department, String email, List<Long> telephoneNumbers) {
         this.employeeId = employeeId;
         this.employeeName = employeeName;
         this.department = department;
-        this.emails = emails;
+        this.email = email;
         this.telephoneNumbers = telephoneNumbers;
     }
 
-    public long getEmployeeId() {
+    public Integer getEmployeeId() {
         return employeeId;
     }
 
@@ -30,15 +30,15 @@ public class Employee {
         return department;
     }
 
-    public String getEmails() {
-        return emails;
+    public String getEmail() {
+        return email;
     }
 
     public List<Long> getTelephoneNumbers() {
         return telephoneNumbers;
     }
 
-    public void setEmployeeId(long employeeId) {
+    public void setEmployeeId(Integer employeeId) {
         this.employeeId = employeeId;
     }
 
@@ -50,8 +50,8 @@ public class Employee {
         this.department = department;
     }
 
-    public void setEmails(String emails) {
-        this.emails = emails;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public void setTelephoneNumbers(List<Long> telephoneNumbers) {
@@ -60,11 +60,11 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee{" +
+        return "EmployeeDao{" +
                 "employeeId=" + employeeId +
                 ", employeeName='" + employeeName + '\'' +
                 ", department='" + department + '\'' +
-                ", emails='" + emails + '\'' +
+                ", email='" + email + '\'' +
                 ", telephoneNumbers=" + telephoneNumbers +
                 '}';
     }
