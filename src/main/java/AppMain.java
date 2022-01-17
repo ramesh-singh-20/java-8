@@ -24,5 +24,8 @@ public class AppMain {
         System.out.println("Printing only even values.");
         map.entrySet().stream().filter(obj -> obj.getValue()%2 ==0).forEach(obj -> System.out.println(obj));
 
+        System.out.println("*******Sorted by Value*********");
+        map.entrySet().stream().sorted(Map.Entry.comparingByValue()).forEach(obj-> System.out.println(obj));
+
     }
 }

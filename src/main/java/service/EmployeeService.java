@@ -32,11 +32,20 @@ public class EmployeeService {
 
         //Comparator<Employee> employeeComparator= (Employee e1, Employee e2) -> e1.getEmployeeId()-e2.getEmployeeId();
 
-        System.out.println("*******After Sorting************");
+        /*System.out.println("*******After Sorting************");
         Collections.sort(employees, (e1, e2)-> {
             return e1.getEmployeeId()- e2.getEmployeeId();
         });
-        System.out.println(employees);
+        System.out.println(employees);*/
+
+        System.out.println("*****Sorting using Stream");
+        employees.stream().sorted((o1, o2) -> o1.getEmployeeName().compareTo(o2.getEmployeeName()))
+                .forEach(emp -> System.out.println(emp.getEmployeeName()));
+
+        System.out.println("*****Sorting using Stream via dept");
+        employees.stream().sorted(Comparator.comparing(Employee:: getDepartment).reversed())
+                .forEach(emp -> System.out.println(emp));
+
 
         //Printing all employeesNames using Stream
         System.out.println("**********Employee Names***************");
