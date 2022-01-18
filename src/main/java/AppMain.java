@@ -5,7 +5,8 @@ public class AppMain {
         EmployeeService service= new EmployeeService();
         //service.sortEmployeesById();
         //service.mapFunctions();
-        service.sortMapUsingStreams();
+        //service.sortMapUsingStreams();
+        service.mapAndFlatMap();
 
 
 

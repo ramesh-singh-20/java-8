@@ -98,8 +98,22 @@ public class EmployeeService {
         System.out.println("******Sorting Map Using Stream**********");
         employeeMap.entrySet().stream().sorted(Map.Entry.comparingByKey(((o1, o2) -> (int)
                 (o1.getSalary()-o2.getSalary())))).forEach(obj -> System.out.println(obj));
+    }
 
+    public void mapAndFlatMap(){
+        List<Employee> employeeList= EmployeeDao.getEmployess();
+        System.out.println("*****Printing emails using map function********");
+        List<String> emails= employeeList.stream().map(emp-> emp.getEmail()).collect(Collectors.toList());
+        System.out.println(emails);
 
+        System.out.println("*****Printing phones using map function********");
+        List<List<Long>> phoneList= employeeList.stream().map(emp -> emp.getTelephoneNumbers())
+                .collect(Collectors.toList());
+        System.out.println(phoneList);
 
+        System.out.println("*****Printing all phones using flatMap function********");
+        List<Long> phones= employeeList.stream().flatMap(emp -> emp.getTelephoneNumbers().stream())
+                .collect(Collectors.toList());
+        System.out.println(phones);
     }
 }

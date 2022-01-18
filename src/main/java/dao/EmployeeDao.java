@@ -21,12 +21,12 @@ public class EmployeeDao {
         telephones3.add(6l);
 
         List<Long> telephones4= new ArrayList<>();
-        telephones3.add(7l);
+        telephones4.add(7l);
 
         model.Employee emp1= new model.Employee(1, "Emp1",
                 "dep1", "email1", telephones1, 20000.00);
         model.Employee emp2= new model.Employee(2, "Emp2",
-                "dep2", "email3", telephones2, 67000.00);
+                "dep2", "email2", telephones2, 67000.00);
         model.Employee emp3= new model.Employee(3, "Emp3",
                 "dep1", "email3", telephones3, 3400.00);
         model.Employee emp4= new model.Employee(4, "Emp4",
