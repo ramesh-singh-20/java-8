@@ -89,7 +89,17 @@ public class EmployeeService {
         List<Employee> employeeList= EmployeeDao.getEmployess();
 
         employeeList.stream().forEach(emp-> employeeMap.put(emp, emp.getEmployeeId()));
-        System.out.println("*****Employee Map*********");
-        System.out.println(employeeMap);
+        /*System.out.println("*****Employee Map Sorted Using TreeMap*********");
+        System.out.println(employeeMap);*/
+
+        System.out.println("******Sorting Map via Value**********");
+        employeeMap.entrySet().stream().sorted(Map.Entry.comparingByValue()).forEach(obj-> System.out.println(obj));
+
+        System.out.println("******Sorting Map Using Stream**********");
+        employeeMap.entrySet().stream().sorted(Map.Entry.comparingByKey(((o1, o2) -> (int)
+                (o1.getSalary()-o2.getSalary())))).forEach(obj -> System.out.println(obj));
+
+
+
     }
 }
