@@ -3,10 +3,7 @@ package service;
 import dao.EmployeeDao;
 import model.Employee;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class EmployeeService {
@@ -58,8 +55,41 @@ public class EmployeeService {
 
         List<Employee> employeeEmptyList= new ArrayList<>();
         //Supplier functional interface demo
-        System.out.println(employeeEmptyList.stream().findAny().orElseGet(()-> new Employee(0, "default",
-                "default", "default", null )));
+        System.out.println(employeeEmptyList.stream().findAny().orElseGet(()->
+                new Employee(0, "default",
+                "default", "default", null,0.0 )));
 
+    }
+
+    public void mapFunctions(){
+        Map<String, Integer> map= new HashMap();
+        map.put("f", 1);
+        map.put("h", 2);
+        map.put("c", 3);
+        map.put("e", 4);
+        map.put("d", 1);
+        map.put("a", 2);
+        map.put("g", 3);
+        map.put("b", 4);
+
+        System.out.println(map);
+        map.forEach((k, v) -> System.out.println(k + ":"+ v));
+        map.entrySet().stream().forEach((obj) -> System.out.println(obj));
+        System.out.println("Printing only even values.");
+        map.entrySet().stream().filter(obj -> obj.getValue()%2 ==0).forEach(obj -> System.out.println(obj));
+
+        System.out.println("*******Sorted by Value*********");
+        map.entrySet().stream().sorted(Map.Entry.comparingByValue()).forEach(obj-> System.out.println(obj));
+    }
+
+    public void sortMapUsingStreams(){
+        Map<Employee, Integer> employeeMap= new TreeMap<>((o1, o2)-> (int)(o1.getSalary()-o2.getSalary()));
+        System.out.println("*****Empty Map*********");
+        System.out.println(employeeMap);
+        List<Employee> employeeList= EmployeeDao.getEmployess();
+
+        employeeList.stream().forEach(emp-> employeeMap.put(emp, emp.getEmployeeId()));
+        System.out.println("*****Employee Map*********");
+        System.out.println(employeeMap);
     }
 }

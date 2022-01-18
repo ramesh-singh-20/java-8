@@ -9,13 +9,19 @@ public class Employee {
     private String department;
     private String email;
     private List<Long> telephoneNumbers;
+    private Double salary;
 
-    public Employee(Integer employeeId, String employeeName, String department, String email, List<Long> telephoneNumbers) {
+    public Employee(Integer employeeId,
+                    String employeeName,
+                    String department, String email,
+                    List<Long> telephoneNumbers,
+                    Double salary) {
         this.employeeId = employeeId;
         this.employeeName = employeeName;
         this.department = department;
         this.email = email;
         this.telephoneNumbers = telephoneNumbers;
+        this.salary= salary;
     }
 
     public Integer getEmployeeId() {
@@ -58,14 +64,23 @@ public class Employee {
         this.telephoneNumbers = telephoneNumbers;
     }
 
+    public Double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(Double salary) {
+        this.salary = salary;
+    }
+
     @Override
     public String toString() {
-        return "EmployeeDao{" +
+        return "Employee{" +
                 "employeeId=" + employeeId +
                 ", employeeName='" + employeeName + '\'' +
                 ", department='" + department + '\'' +
                 ", email='" + email + '\'' +
                 ", telephoneNumbers=" + telephoneNumbers +
+                ", salary=" + salary +
                 '}';
     }
 
