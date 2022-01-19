@@ -131,4 +131,25 @@ public class EmployeeService {
 
         return inputString.stream().reduce((word1, word2) -> word1.length()> word2.length() ? word1: word2).get();
     }
+
+    public void analyzeSalary(String department){
+        System.out.println("Average Salary: "+ EmployeeDao.getEmployess().stream()
+                .filter(emp -> emp.getDepartment().equalsIgnoreCase(department))
+                .map(emp -> emp.getSalary())
+                .mapToDouble(i -> i)
+                .average().getAsDouble());
+
+        System.out.println("Sum of Salary: "+ EmployeeDao.getEmployess().stream()
+                .filter(emp -> emp.getDepartment().equalsIgnoreCase(department))
+                .map(emp -> emp.getSalary())
+                .mapToDouble(i -> i)
+                .sum());
+
+        System.out.println("Max  Salary: "+ EmployeeDao.getEmployess().stream()
+                .filter(emp -> emp.getDepartment().equalsIgnoreCase(department))
+                .map(emp -> emp.getSalary())
+                .mapToDouble(i -> i)
+                .max().getAsDouble());
+
+    }
 }

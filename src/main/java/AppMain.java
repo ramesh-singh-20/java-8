@@ -8,7 +8,7 @@ public class AppMain {
         //service.sortMapUsingStreams();
         //service.mapAndFlatMap();
         //System.out.println(service.getEmployeeByEmail("email2"));
-        System.out.println(service.longestString());
-
+        //System.out.println(service.longestString());
+        service.analyzeSalary("dep1");
     }
 }
