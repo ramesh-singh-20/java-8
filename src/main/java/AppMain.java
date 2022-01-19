@@ -1,3 +1,4 @@
+import parallel_stream.ParallelStreamExample;
 import service.EmployeeService;
 
 public class AppMain {
@@ -9,6 +10,7 @@ public class AppMain {
         //service.mapAndFlatMap();
         //System.out.println(service.getEmployeeByEmail("email2"));
         //System.out.println(service.longestString());
-        service.analyzeSalary("dep1");
+        //service.analyzeSalary("dep1");
+        ParallelStreamExample.parallelStream();
     }
 }
