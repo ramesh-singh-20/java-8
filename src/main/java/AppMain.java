@@ -7,8 +7,8 @@ public class AppMain {
         //service.mapFunctions();
         //service.sortMapUsingStreams();
         //service.mapAndFlatMap();
-        System.out.println(service.getEmployeeByEmail("email2"));
-
+        //System.out.println(service.getEmployeeByEmail("email2"));
+        System.out.println(service.longestString());
 
     }
 }

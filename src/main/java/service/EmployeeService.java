@@ -5,6 +5,7 @@ import model.Employee;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class EmployeeService {
     public void sortEmployeesById(){
@@ -123,5 +124,11 @@ public class EmployeeService {
                 filter(emp -> emp.getEmail().equalsIgnoreCase(email)).
                 findAny().
                 orElseThrow(()-> new Exception("No employee exists with this email id."));
+    }
+
+    public String longestString(){
+        List<String> inputString= Stream.of("Java", "Spring", "Hibernate","Angular 11").collect(Collectors.toList());
+
+        return inputString.stream().reduce((word1, word2) -> word1.length()> word2.length() ? word1: word2).get();
     }
 }
