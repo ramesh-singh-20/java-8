@@ -13,7 +13,8 @@ public class Employee {
 
     public Employee(Integer employeeId,
                     String employeeName,
-                    String department, String email,
+                    String department,
+                    String email,
                     List<Long> telephoneNumbers,
                     Double salary) {
         this.employeeId = employeeId;

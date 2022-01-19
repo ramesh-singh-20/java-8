@@ -116,4 +116,12 @@ public class EmployeeService {
                 .collect(Collectors.toList());
         System.out.println(phones);
     }
+
+    public Employee getEmployeeByEmail(String email) throws Exception {
+        List<Employee> employees= EmployeeDao.getEmployess();
+        return employees.stream().
+                filter(emp -> emp.getEmail().equalsIgnoreCase(email)).
+                findAny().
+                orElseThrow(()-> new Exception("No employee exists with this email id."));
+    }
 }

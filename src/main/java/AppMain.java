@@ -1,13 +1,13 @@
 import service.EmployeeService;
 
 public class AppMain {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         EmployeeService service= new EmployeeService();
         //service.sortEmployeesById();
         //service.mapFunctions();
         //service.sortMapUsingStreams();
-        service.mapAndFlatMap();
-
+        //service.mapAndFlatMap();
+        System.out.println(service.getEmployeeByEmail("email2"));
 
 
     }
